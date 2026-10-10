@@ -33,7 +33,7 @@
   function llenarDias() {
     const previo = selDia.value;
     const mes = Number(selMes.value);
-    const anio = Number(selAnio.value) || 2000; // 2000 es bisiesto: permite el 29 de febrero
+    const anio = Number(selAnio.value) || 2000;   
     const total = mes ? new Date(anio, mes, 0).getDate() : 31;
 
     opcionVacia(selDia, 'Día');

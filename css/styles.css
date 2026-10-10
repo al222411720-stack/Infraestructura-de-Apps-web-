@@ -4,8 +4,8 @@
   --suave: #5a6b78;
   --panel: #f6fbf9;
   --linea: #c3d9d0;
-  --acento: #4f5ba6;
-  --acento-oscuro: #3e4989;
+  --acento: #a66f4fa3;
+  --acento-oscuro: #c88045ee;
   --error: #b42318;
   --ok: #0f7a3d;
   --radio: 14px;
@@ -25,7 +25,6 @@ body {
 
 .contenedor { width: min(100%, 760px); margin: 0 auto; padding: 2.5rem 1.25rem 3rem; }
 
-/* ---------- Encabezado y pestañas ---------- */
 .encabezado h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; }
 .encabezado p { margin-top: .6rem; color: var(--suave); }
 
@@ -103,7 +102,6 @@ select[aria-invalid="true"] { border-color: var(--error); }
 
 .fila-temp { display: grid; grid-template-columns: 1fr 1.2fr 1.2fr auto; gap: .6rem; }
 
-/* ---------- Tareas ---------- */
 .fila-tarea { display: flex; gap: .6rem; }
 .lista { list-style: none; padding: 0; margin: .5rem 0; }
 .tarea {
