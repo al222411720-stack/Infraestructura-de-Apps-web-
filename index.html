@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Examen l IAW</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <header class="encabezado">
+      <h1 id="titulo">Tiempo Transcurrido</h1>
+      <p id="subtitulo">Calcula tu edad</p>
+    </header>
+
+    <nav class="pestanas" aria-label="Herramientas">
+      <a href="#edad" data-vista="edad"
+         data-titulo="Tiempo Transcurrido"
+         data-sub="Calcula los años y meses transcurridos desde tu nacimiento.">Edad</a>
+      <a href="#termico" data-vista="termico"
+         data-titulo="Convertidor Térmico"
+         data-sub="Convierte entre Celsius, Fahrenheit y Kelvin.">Térmico</a>
+      <a href="#tareas" data-vista="tareas"
+         data-titulo="Gestor de Tareas"
+         data-sub="Organiza tus actividades del día.">Tareas</a>
+    </nav>
+
+    <main>
+
+      <section class="vista panel" id="edad">
+        <form id="form-edad" novalidate>
+          <fieldset>
+            <legend>Fecha de nacimiento</legend>
+            <div class="fila-fecha">
+              <div class="campo">
+                <label for="sel-dia">Día</label>
+                <select id="sel-dia"></select>
+              </div>
+              <div class="campo">
+                <label for="sel-mes">Mes</label>
+                <select id="sel-mes"></select>
+              </div>
+              <div class="campo">
+                <label for="sel-anio">Año</label>
+                <select id="sel-anio"></select>
+              </div>
+            </div>
+          </fieldset>
+          <p id="error-edad" class="error" role="alert"></p>
+          <button type="submit" class="primario">Calcular</button>
+        </form>
+        <p id="resultado-edad" class="resultado" aria-live="polite"></p>
+      </section>
+
+      <section class="vista panel" id="termico" hidden>
+        <form id="form-temp" class="fila-temp" novalidate>
+          <input type="number" id="temp-valor" step="any" placeholder="0.00" aria-label="Valor">
+          <select id="temp-origen" aria-label="Unidad de origen">
+            <option value="" selected disabled>De</option>
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+          </select>
+          <select id="temp-destino" aria-label="Unidad de destino">
+            <option value="" selected disabled>A</option>
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+          </select>
+          <button type="submit" id="temp-btn" class="primario" disabled>Convertir</button>
+        </form>
+        <p id="temp-resultado" class="resultado" aria-live="polite"></p>
+      </section>
+
+      <section class="vista panel" id="tareas" hidden>
+        <form id="form-tarea" class="fila-tarea" novalidate>
+          <input type="text" id="tarea-texto" placeholder="Escribe una tarea y presiona Enter" aria-label="Nueva tarea" maxlength="120" autocomplete="off">
+          <button type="submit" class="primario">Agregar</button>
+        </form>
+        <p id="tarea-error" class="error" role="alert"></p>
+        <ul id="lista-tareas" class="lista"></ul>
+        <p id="tareas-vacio" class="ayuda">Aún no tienes tareas. Escribe la primera arriba.</p>
+        <p id="tareas-conteo" class="ayuda" aria-live="polite"></p>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/edad.js" defer></script>
+  <script src="js/temperatura.js" defer></script>
+  <script src="js/tareas.js" defer></script>
+</body>
+</html>
